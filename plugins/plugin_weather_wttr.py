@@ -99,11 +99,12 @@ def get_date(data: str):
 # текущая погода
 def get_weather(core: VACore, phrase: str):
 	try:
-		core.play_voice_assistant_speech('Текущая погодная сводка')
+		core.play_voice_assistant_speech('Сейчас посмотрю')
 		
 		weathers = request_weather(location) 
 		text = get_weather_text(weathers['current_condition'][0])
-		core.play_voice_assistant_speech(text)
+        
+		core.play_voice_assistant_speech('На улице ' + text)
 		return
 	except Exception as e:
 		pass
