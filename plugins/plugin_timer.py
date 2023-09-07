@@ -37,7 +37,7 @@ def start(core:VACore):
         },
 
         "commands": {
-            "поставь таймер|поставь тайгер|таймер|тайгер": set_timer,
+            "поставь таймер|поставь тайгер|таймер|таймер на|тайгер|засеки": set_timer,
         }
     }
     return manifest
@@ -117,7 +117,7 @@ def set_timer(core:VACore, phrase:str):
         return
 
     # непонятно, но сохраняем контекст и переспрашиваем время
-    core.say("Что после таймер?")
+    core.say("Простите, повторите время")
     core.context_set(set_timer)
 
 def set_timer_real(core:VACore, num:int, txt:str):
